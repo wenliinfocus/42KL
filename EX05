@@ -1,0 +1,22 @@
+ft_putstr.c
+
+#include <unistd.h>
+
+void    ft_putstr(char *str)
+{
+    int len;
+
+    len = 0;
+    while (str[len] != '\0')
+    {
+        write(1, str, len);
+        len++;
+    }
+}
+
+int     main(void)
+{
+    ft_putstr("who are you");
+    return (0);
+}
+~
