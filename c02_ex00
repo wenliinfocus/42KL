@@ -1,4 +1,9 @@
 Files to turn in : ft_strcpy.c
+/* The strncpy() function copies at most n characters from s2 into s1. (including
+     the terminating '\0' character).
+RETURN VALUES
+     The strcpy() and strncpy() functions return s1
+*/
 
 #include <unistd.h>
 
