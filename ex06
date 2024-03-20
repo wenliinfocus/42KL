@@ -2,7 +2,13 @@ ft_strlen.c
 
 #include <unistd.h>
 
-int ft-strlen(char *str)
+int ft_strlen(char *str)
 {
-    len (*st)r;
+    int len;
+
+    len = 0
+    while (str[len] != '\0')
+    {
+        len++;
+    }
 }
