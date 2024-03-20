@@ -4,14 +4,14 @@ ft_putstr.c
 
 void    ft_putstr(char *str)
 {
-    int len;
+    int len;  // Declare an integer value to store the length of the string
 
-    len = 0;
-    while (str[len] != '\0')
+    len = 0;  // To initilize the length to 0
+    while (str[len] != '\0')  // This condition checks if the character at index len in the string is not '\0'
     {
-        write(1, str, len);
-        len++;
+        len++;  // Increment len to move to the next character in the string
     }
+    write(1, str, len);  // Arguments: file descriptor 1 (standard output), pointer to the string, and the length of the string
 }
 
 int     main(void)
