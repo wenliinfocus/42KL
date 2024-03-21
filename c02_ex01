@@ -6,12 +6,15 @@ Files to turn in: ft_strncpy.c
   RETURN VALUES
      The strcpy() and strncpy() functions return s1.
   */
+/* The C library function char *strncpy(cahr *dest, const char *src, size_t n) copies up to the n characters from the string pointed to, by src to dest.
+In the case whereby the length of src is less than that of n, the remainder of dest will be padded with null bytes.
+*/
 
 #include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, int n)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	while (src[i] != '\0' && i < n)
