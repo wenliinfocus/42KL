@@ -14,10 +14,9 @@ void    ft_rev_int_tab(int *tab, int size)
     /* Swap the elements at position i and size - i - 1 in the array
     This effectively reverses the order of elements in the array
     */
-
-    element = tab[i];  // Store the order of elements in the array
-    tab[i] = tab[size - i - 1];  //This effectively reverses the order of elements in the array
-    tab[size - i - 1] = element;  // Replace the element at the enf of the array with the previous stored element
-    i++;
+        element = tab[i];  // Store the order of elements in the array
+        tab[i] = tab[size - i - 1];  //This effectively reverses the order of elements in the array
+        tab[size - i - 1] = element;  // Replace the element at the enf of the array with the previous stored element
+        i++;
     }
 }
