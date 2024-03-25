@@ -9,9 +9,9 @@ void    ft_putstr(char *str)
     len = 0;  // To initilize the length to 0
     while (str[len] != '\0')  // This condition checks if the character at index len in the string is not '\0'
     {
-        len++;  // Increment len to move to the next character in the string
+        len++;  // Increment len to move to the next character in the string. Print length of string first before writing out the string.
     }
-    write(1, str, len);  // Arguments: file descriptor 1 (standard output), pointer to the string, and the length of the string
+    write(1, str, len);  // Arguments: file descriptor 1 (standard output), pointer to the string, and the length of the string.
 }
 
 int     main(void)
