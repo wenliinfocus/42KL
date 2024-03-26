@@ -1,0 +1,40 @@
+Files to turn in: ft_strncat.c
+
+/* The strcat() and strncat() functions append a copy of the null-terminated string s2 to the end of the null-terminated string s1, then add a termi-nating '\0'.
+The string s1 must have sufficient space to hold the result.
+The strncat() function appends not more than n characters from s2, and then adds a terminating '\0'.
+*/
+
+#include <unistd.h>
+
+int  get_len(char *str)
+{
+  unsigned int  i;
+
+  i = 0;
+  while (str[i] != '\0')
+  {
+    i++;
+  }
+  return (i);
+}
+
+char  *ft_strncat(char *dest, char *src, unsigned int nb)
+{
+  unsigned int  i;
+  unsigned int  k;
+
+  if (nb < 1)
+  {
+  return (dest);
+  }
+  i = 0;
+  k = get_len(dest);
+  while (src[i] != '\0' && i < nb)
+  {
+    dest[k + i] = src[i];
+    i++;
+  }
+  dest[k + i] = '\0';
+  return (dest);
+}
