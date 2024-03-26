@@ -1,5 +1,9 @@
 Files to turn in : ft_strncmp.c
 
+/* The strncmp function compares two strings up to a specified number of characters or until it finds a difference, whichever comes first.
+In summary, strcmp compares entire strings, while strncmp allows you to specify the maximum number of characters to compare. 
+strncmp is often used when comparing substrings or when you want to limit the comparison to a certain number of characters.
+*/
 
 #include <unistd.h>
 
