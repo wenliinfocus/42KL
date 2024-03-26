@@ -1,0 +1,14 @@
+Files to turn in: ft_strstr.c
+
+/* The strstr() function locates the first occurrence of the null-terminated string s2 in the null-terminated string s1.
+*/
+
+#include <unistd.h>
+
+char  *ft_strstr(char *str, char *to_find)
+{
+  unsigned int  i;
+  unsigned int  k;
+
+  i = 0;
+  if 
