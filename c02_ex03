@@ -7,7 +7,7 @@
 
 int  check_numeric(char c)
 {
-  if ((c >= '0') && (c <= '9')
+  if (c >= '0' && c <= '9')
   {
     return (1);
   }
@@ -29,3 +29,16 @@ int  ft_str_is_numeric(char *str)
   }
   return (1);
 }
+
+/*
+#include <stdio.h>
+
+int main()
+{
+char str1[] = "1234567890";
+char str2[] = "abc123";
+
+printf("Result from str1: %d\n", ft_str_is_numeric(str1));
+printf("Result from str2: %d\n", ft_str_is_numeric(str2));
+}
+*/
