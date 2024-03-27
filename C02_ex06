@@ -8,7 +8,7 @@ The C isprint() function is used to check if a character passed as the argument 
 
 int   check_printable(char c)
 {
-  if ((c >= ' ') && (c <= '~'))
+  if (c >= ' ' && c <= '~')
   {
     return (1);
   }
