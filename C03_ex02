@@ -27,3 +27,20 @@ char  *ft_strcat(char *dest, char *src)
   dest[i] = '\0';  // Append a null terminator to the end of the concatenated string
   return (dest);  // Return the modified destination string
 }
+
+/*
+#include <stdio.h>
+
+int  main()
+{
+  char  dest[20] = "Hello, ";
+  char  src[] = "World!";
+
+  ft_strcat(dest, src);
+
+  printf("Concatenated string: %s\n", dest);
+  return (0);
+}
+
+RESULT: Concatenated string: Hello, World!
+*/
