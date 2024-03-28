@@ -29,3 +29,20 @@ int  ft_strncmp(char *s1, char *s2, unsigned int n)
     return (s1[i] - s2[i]);  // Otherwise, return the difference between the first differing characters
   }
 }
+
+/*
+#include <stdio.h>
+
+int  main()
+{
+  char str1[] = "Hello";
+  char str2[] = "Hollo";
+  char str3[] = "Heolla";
+  char str4[] = "World";
+
+  printf("Comparison result for str1 and str2: %d\n", ft_strncmp(str1, str2, 3));
+  printf("Comparison result for str1 and str3: %d\n", ft_strncmp(str1, str3, 3));
+  printf("Comparison result for str1 and str4: %d\n", ft_strncmp(str1, str4, 5));
+  return (0);
+}
+*/
