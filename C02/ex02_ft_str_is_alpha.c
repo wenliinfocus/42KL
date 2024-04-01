@@ -1,5 +1,6 @@
 Files to turn in : ft_str_is_alpha.c
-  /* isalpha() method returns true if all in the input string are alphabetic and there is at least one character.
+  
+/* isalpha() method returns true if all in the input string are alphabetic and there is at least one character.
 */
 
 #include <unistd.h>
