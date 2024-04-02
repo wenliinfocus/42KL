@@ -1,0 +1,42 @@
+// Iterative Approach: 
+- Iterative solutions use loops (like for or while loops)
+- It's like climbing a staircase step by step. 
+
+def factorial(number):
+
+for i in range(number):
+  product = product * (i + 1);
+return product;
+
+
+// Recursive Approach: 
+- It's like looking into a set of mirrors. Each reflection leads to another reflection, creating a series of images that seem to go on forever.
+- It's like breaking down a big problem into smaller, similar sub-problems, and then solving each sub-problem using the same approach.
+- In programming, recursive solutions involve a function calling itself to solve a problem.
+- Identify the base condition to stop the recursion (The base condition is the one which doesn't require to call the same function again and it helps in stopping the recursion.
+
+> Basic Structure:
+
+Factorial (int n)
+{
+  if (n == 1)  // #Base Case (2nd step)
+  {
+    return 1;
+  }
+  else   // Recursive Procedure (1st step) 
+  {
+    return n * factorial (n - 1);
+  }
+}
+
+// Factorial (n) = n * Fact(n - 1)
+                                 
+/*
+int  main()
+{
+  int  n;
+  printf("Enter the number: ");
+  printf("Factorial of a number %d", n, fact(n));
+  return 0;
+}
+*/
