@@ -7,7 +7,8 @@ Reproduce the behavior of the function strdup (man strdup).
 - The pointer may subsequently be used as an argument to the function free(3).
 - If insufficient memory is available, NULL is returned and errno is set to ENOMEM.
 
-The <stdlib.h> header file contains general-purpose functions, macros, and types, such as malloc() , free() , and EXIT_SUCCESS .
+The <stdlib.h> header file contains general-purpose functions, macros, and types, such as malloc() , free() , and EXIT_SUCCESS.
+Malloc is used for dynamic memory allocation and is useful when you don't know the amount of memory needed during compile time.
 */
 
 mkdir ex00
