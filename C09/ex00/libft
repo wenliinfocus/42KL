@@ -3,6 +3,8 @@ Files to turn in: libft_creator.sh, ft_putchar.c, ft_swap.c, ft_putstr.c, ft_str
 /*
 Create your ft library. It’ll be called libft.a.
 • A shell script called libft_creator.sh will compile source files appropriately and will create your library.
+
+“Libft – your own first library” is an individual project at 42.
 */
 
 
