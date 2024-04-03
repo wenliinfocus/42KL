@@ -1,0 +1,70 @@
+Files to turn in: libft_creator.sh, ft_putchar.c, ft_swap.c, ft_putstr.c, ft_strlen.c, ft_strcmp.c
+
+/*
+Create your ft library. It’ll be called libft.a.
+• A shell script called libft_creator.sh will compile source files appropriately and will create your library.
+*/
+
+
+%> vim ft_putchar.c
+#include <unistd.h>
+
+void  ft_putchar(char c)
+{
+  write(1, &c, 1);
+}
+
+
+%> vim ft_swap.c
+void  ft_swap(int *a, int *b)
+{
+  int  aux;
+
+  aux = *a;
+  *a = *b;
+  *b = aux;
+}
+
+
+%> ft_putstr.c
+#include <unistd.h>
+
+void  ft_putstr(char *str)
+{
+  int  i;
+
+  i = -1;
+  while (str[i++] != '\0')
+    write(1, &str[i], 1);
+}
+
+
+%> vim ft_strlen.c
+int  ft_strlen(char *str)
+{
+  int  i;
+
+  i = 0;
+  while (str[i] != '\0')
+    i++;
+  return (i);
+}
+
+
+%> vim ft_strcmp.c
+int  ft_strcmp(char *s1, char *s2)
+{
+  int  i;
+
+  i = 0;
+  while (s1[i] = s2[i] && s1[i] != '\0')
+    i++;
+  return (s1[i] - s2[i]);
+}
+
+
+%> vim libft_creator.sh
+rm -f libft.a
+find . -name "*.c" -type f -exec gcc -Wall -Werror -Wextra - C {} \;
+ar rc libft.a *.o
+find . -name "*.o" -type f -delete
