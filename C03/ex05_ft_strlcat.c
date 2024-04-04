@@ -2,63 +2,38 @@ Files to turn in : ft_strlcat.c
 
 /*
 The strlcat() function returns the total length of the string that would have been created if there was unlimited space. 
+Overall, this function calculates the length of the concatenated string and performs the concatenation while ensuring that the result fits within the specified buffer size. It adheres to the behavior of the standard strlcat function, which concatenates strings and appends the null terminator, without overflowing the destination buffer.
 */
 
 #include <unistd.h>
 
 unsigned int  ft_strlcat(char *dest, char *src, unsigned int size)
 {
-  int n;   // Index to iterate through the destination string
-  int m;   // Index to iterate through the source string
-  int o;   // Length of the destination string
-  int p;   // Length of the source string
+  unsigned int  dest_size;
+  unsigned int  src_size;
+  unsigned int  result;
 
-  n = -1;   // Initialize 'n' to -1
-  m = 0;
-  o = -1;
-  p = -1;
-  while (src[++p] != '\0'){}   // Calculate the length of the source string ('src')
-  while (dest[++o] != '\0'){}   // Calculate the length of the destination string ('dest')
-  while (dest[++n] != '\0')   // Move 'n' to the end of the destination string
-    size--;   // Decrease 'size' for each character in the destination string
-  while (size != 0)   // Concatenate characters from the source string to the destination string
+  dest_size = 0;
+  while (dest[dest_size] != '\0')  // Calculate the lengths of the destination string (dest) until the null terminator \0 is encountered.
+    ++dest_size;
+  src_size = 0;
+  while (src[src_size]!= '\0')  // Calculate the lengths of the source string (src) until the null terminator \0 is encountered.
+    ++src_size;
+  result = src_size;  // The result is initialized to the length of the source string (src_size).
+  if (size <= dest_size)  // This condition updates the result based on the destination buffer size (size). 
+    result += size;
+  else
+    result += dest_size;
+  src_size = 0;
+  while (src[src_size] != '\0' && dest_size + 1 < size)  // This loop concatenates characters from the source string src to the destination string dest, ensuring that the resulting string fits within the specified size.
   {
-    while (src[m] != '\0')  // Iterate through the characters of the source string
-    {
-      if (dest[n] == '\0')  // If the end of the destination string is reached, add characters from the source string
-      {
-        dest[n++] = src[m++];  // Copy character from 'src' to 'dest'
-        size--;  // Decrease 'size' after each character is copied
-        if (size == 0)
-          break;   // Break the loop if 'size' reaches 0
-      }
-    }
-    dest[n - 1] = '\0';  // Add null terminator at the end of the concatenated string
+    dest[dest_size] = src[src_size];
+    dest_size++;
+    src_size++;
   }
-  return (o + p);  // Return the total length of the concatenated string
+  dest[dest_size] = '\0';  //Finally, a null terminator is added to the end of the concatenated string in the destination buffer to ensure it is properly terminated.
+  return (result);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-
-int  main(void)
-{
-  int a;
-  int b;
-  char arr1[] = "kekw";
-  char arr2[] = "kekw";
-  char arr3[] = "kekw";
-
-  a = ft_strlcat(arr1, arr2, 2);
-  b = ft_strlcat(arr3, arr2, 2);
-  printf("my func: %s\n", arr1);
-  printf("sys func: %s\n", arr3);
-  printf("my func: %d\n", a);
-  printf("my func: %d\n", a);
-  return (0);
-}
-*/
 
 /*
 #include <stdio.h> // For printf function
