@@ -37,6 +37,27 @@ void  ft_putnbr(int nb)
     ft_putnbr(nb + '0');  // If the number is less than 10, output it directly as a character and convert the digit to its character representation and output it
   }
 }
+__________
+// another method using recursive
+
+#include <unistd.h>
+
+void	ft_putnbr(int nb)
+{
+	char	*num = "0123456789";
+	long int	nbl = nb;
+
+	if (nbl < 0)
+	{
+		write(1, "-", 1);
+		nbl = -nbl;
+	}
+	if (nbl > 9)
+	{
+		ft_putnbr(nbl / 10);
+	}
+	write(1, &num[nbl % 10], 1);
+}
 
 /*
 #include <stdio.h>
